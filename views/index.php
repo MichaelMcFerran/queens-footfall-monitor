@@ -15,7 +15,6 @@
   <link href="/stylesheets/style.css" rel="stylesheet">
 
  <!-- Queens logo fix -->
- <link rel="shortcut icon" type="image/png" href="img/QueensLogo.png"> 
     <!-- ****** faviconit.com favicons ****** -->
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="img/faviconit/favicon.ico">
