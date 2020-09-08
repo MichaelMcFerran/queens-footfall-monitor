@@ -15,7 +15,7 @@
   <link href="/stylesheets/style.css" rel="stylesheet">
 
   <!-- ****** faviconit.com favicons ****** -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="img/faviconit/favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="img/faviconit/favicon.ico">
   <link rel="icon" type="image/png" sizes="196x196" href="img/faviconit/favicon-192.png">
   <link rel="icon" type="image/png" sizes="160x160" href="img/faviconit/favicon-160.png">
