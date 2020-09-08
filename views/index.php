@@ -94,7 +94,8 @@
   </body>
 </html>
 
-    //connect to GPIO of PI
+ <!-- checking excess code doesnt cause issues -->
+    <!-- //connect to GPIO of PI
     var socket = io.connect('/');
 	//jquery takes changed state of toggle on page and passes state to server
     // $("#myonoffswitch").change(function(){
@@ -110,4 +111,4 @@
     </script>
 
   </body>
-</html>
+</html> -->
