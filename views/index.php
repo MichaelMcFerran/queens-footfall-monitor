@@ -6,16 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Door Count Demo</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-  <!-- Custom styles -->
-  <link href="/stylesheets/style.css" rel="stylesheet">
-
-  <!-- ****** faviconit.com favicons ****** -->
-  <link rel="shortcut icon" href="img/faviconit/favicon.ico">
+  <!-- Queens logo fix -->
+  <link rel="shortcut icon" type="image/png" href="img/faviconit/favicon-16.png"> 
+    <!-- ****** faviconit.com favicons ****** -->
+  <!-- <link rel="shortcut icon" href="img/faviconit/favicon.ico"> -->
   <link rel="icon" sizes="16x16 32x32 64x64" href="img/faviconit/favicon.ico">
   <link rel="icon" type="image/png" sizes="196x196" href="img/faviconit/favicon-192.png">
   <link rel="icon" type="image/png" sizes="160x160" href="img/faviconit/favicon-160.png">
@@ -36,6 +30,15 @@
   <meta name="msapplication-TileImage" content="img/faviconit/favicon-144.png">
   <meta name="msapplication-config" content="img/faviconit/browserconfig.xml">
   <!-- ****** faviconit.com favicons ****** -->
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+  <!-- Custom styles -->
+  <link href="/stylesheets/style.css" rel="stylesheet">
+
+
 
 </head>
 
