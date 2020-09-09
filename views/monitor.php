@@ -46,15 +46,15 @@
 
 <body>
     <!-- Preloading screen -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Navigation Bar Start -->
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="./index.php">
+                <a href="/index.php">
                     <img src="img/logo2.png" alt="">
                 </a>
             </div>
