@@ -48,7 +48,7 @@
     </div> -->
 
     <!-- Navigation Bar Start -->
-    <header class="header-section">
+    <!-- <header class="header-section">
         <div class="container">
             <div class="logo">
                 <a href="/index.php">
@@ -76,7 +76,7 @@
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
-    </header>
+    </header> -->
     <!-- Nav Bar End -->
 
     <!-- Hero/carousel Section Begin -->
@@ -184,17 +184,12 @@
 
 
     <!-- Js Plugins -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.slicknav.js"></script>
-    <!-- <script src="../js/owl.carousel.min.js"></script> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-    
-
-
-
-
-    <script src="../js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> -->
+    <script src="js/main.js"></script>
 
     
 </body>
