@@ -79,8 +79,29 @@
     </header> -->
     <!-- Nav Bar End -->
 
+
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="inner cover">
+        <h1 class="cover-heading">CSB foyer</h1>
+        <div class="alert alert-success" role="alert">
+            Current People : <p id ="myCount"> </p>
+          </div>
+      <!-- <h1 class="cover-heading">PI Button state</h1>
+          <div class="onoffswitch" style="margin:0px auto;">
+            <div class="switch demo3">
+              <input type="checkbox" id="mybuttonGPIO">
+              <label><i></i></label>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Hero/carousel Section Begin -->
-    <section class="hero-section">
+    <!-- <section class="hero-section">
         <div class="hero-items owl-carousel">
             <div class="single-hero-item set-bg" data-setbg="#">
                 <div class="container">
@@ -110,12 +131,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Hero Section End -->
 
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <!-- <footer class="footer-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
@@ -153,7 +174,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- Footer Section End -->
 
 <?php
@@ -180,9 +201,6 @@
 }
 
 ?>
-        
-
-
     <!-- Js Plugins -->
     <script src="/public/js/jquery-3.3.1.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
@@ -190,6 +208,28 @@
     <script src="/public/js/owl.carousel.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> -->
     <script src="/public/js/main.js"></script>
+
+    <script src="socket.io/socket.io.js"></script>
+    <!-- script for conencting to Pi  -->
+    <script type="text/javascript">
+
+    //connect to GPIO of PI
+    var socket = io.connect('/');
+	//jquery takes changed state of toggle on page and passes state to server
+    // $("#myonoffswitch").change(function(){
+    //   socket.emit("stateChanged", this.checked);
+    // });
+    
+    socket.on("updatecount", function (count) {
+    	console.log("The count is: " + count); //checks count is received
+	//js below changes checkbox on html page dynamically as state is send from PI-server-HTML
+    // var personCount = document.getElementById("myCount");
+    // personCount.firstChild.nodeValue = count;
+    document.getElementById("myCount").innerHTML = count;
+    
+    });
+	
+    </script>
 
     
 </body>
