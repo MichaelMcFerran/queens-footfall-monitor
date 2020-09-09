@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor Footfall CSB </title>
-    <!-- <link rel="shortcut icon" type="image/png" href="img/olympicsIcon.png"> -->
-
-
     <!-- Css -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
@@ -190,7 +187,13 @@
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.slicknav.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
+    <!-- <script src="../js/owl.carousel.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    
+
+
+
+
     <script src="../js/main.js"></script>
 
     
