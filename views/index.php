@@ -16,7 +16,7 @@
 
  <!-- Queens logo fix -->
     <!-- ****** faviconit.com favicons ****** -->
-  <link rel="shortcut icon" href="/public/img/favicon.ico">
+  <link rel="shortcut icon" href="/public/img/faviconit/favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/img/faviconit/favicon.ico">
   <link rel="icon" type="image/png" sizes="196x196" href="/public/img/faviconit/favicon-192.png">
   <link rel="icon" type="image/png" sizes="160x160" href="/public/img/faviconit/favicon-160.png">
