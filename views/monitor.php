@@ -184,12 +184,12 @@
 
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="/public/js/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/jquery.slicknav.js"></script>
+    <script src="/public/js/owl.carousel.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> -->
-    <script src="js/main.js"></script>
+    <script src="/public/js/main.js"></script>
 
     
 </body>
