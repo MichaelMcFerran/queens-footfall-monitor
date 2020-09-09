@@ -5,11 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
-
 /* GET monitor page. */
 router.get('/monitor', function(req, res) {
-  res.render('monitor.php', { title: 'Express' });
+  res.render('monitor', { title: 'Express' });
 });
+
 
 
 module.exports = router;
