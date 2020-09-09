@@ -7,8 +7,8 @@ router.get('/', function(req, res) {
 });
 
 /* GET monitor page. */
-router.get('/monitor.php', function(req, res) {
-  res.render('monitor', { title: 'Express' });
+router.get('/monitor', function(req, res) {
+  res.render('monitor.php', { title: 'Express' });
 });
 
 
