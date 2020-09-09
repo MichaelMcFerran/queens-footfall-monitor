@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
    
     <!-- custom styles -->
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="../css/style.css" type="text/css"> -->
+    <link rel="stylesheet" href="/monitorstyle.css" type="text/css">
 
 
 	<!-- ****** faviconit.com favicons ****** -->
