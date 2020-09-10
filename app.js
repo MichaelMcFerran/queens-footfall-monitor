@@ -9,6 +9,9 @@ var routes = require('./routes/index');
 
 var app = express();
 
+//hopefully should all conn.php to connect  https://www.npmjs.com/package/php
+var php = require('php');
+
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -30,9 +33,14 @@ con.connect(function(err) {
       console.log(resultLo);
     });
   });
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+// setup php templating engine https://www.npmjs.com/package/php
+app.set('views', path.join(__dirname, 'templates'))
+app.set('view engine', 'php')
+app.engine('php', php.__express)
 
 app.use(favicon());
 //fix to get favicon working https://stackoverflow.com/questions/15463199/how-to-set-custom-favicon-in-express
