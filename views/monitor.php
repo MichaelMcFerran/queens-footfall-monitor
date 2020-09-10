@@ -2,7 +2,7 @@
 <html>
 <script type="text/javascript"> 
 //connection to db test
-var mysql = require('mysql');
+var mysql = require('../node_modules/mysql'); //fix
 
 var con = mysql.createConnection({
   host: "eu-cdbr-west-03.cleardb.net",
@@ -167,7 +167,6 @@ con.connect(function(err) {
                                                 $currentF =$row['CurrentFootfall']; 
                                                 $Times =$row['Time'];       
                                             //now echo to display vars with fetched data from dB
-                                            echo "<script> resultLo </script>";
                                               echo "
                                               
                                               <tr>
@@ -193,7 +192,6 @@ con.connect(function(err) {
                             <div class="col-lg-10">
                                 <div class="section-title">
                                     <h2>Sensor Connect Test</h2>
-                                    echo "<script> resultLo </script>";
                                     <div class="alert alert-success" role="alert">
                                         Current People : <p id ="myCount"> </p>
                                     </div>
