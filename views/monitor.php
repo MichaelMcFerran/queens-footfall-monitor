@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript"> 
-con.connect(function(err) {
-    if (err) throw err;
-    con.query("SELECT * FROM FMusers", function (err, result, fields) {
-      if (err) throw err;
-      var resultLo = result;
-      console.log(resultLo);
-    });
-  });
+// con.connect(function(err) {
+//     if (err) throw err;
+//     con.query("SELECT * FROM FMusers", function (err, result, fields) {
+//       if (err) throw err;
+//       var resultLo = result;
+//       console.log(resultLo);
+//     });
+//   });
 </script>
 <!-- insert all preloaded PHP scripts here to autoload all data before rendering page contents, manipulated page content scritps go on bottom -->
 <?php
 //finds logged data entry that can populate table on down the page
-include('/conn.php')
+include('conn.php')
 $dBLogConnect = "SELECT * FROM FMusers";
 $resultLog = $conn->query($dBLogConnect);
 
