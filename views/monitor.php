@@ -8,7 +8,7 @@ include('conn.php')
 $dBLogConnect = "SELECT * FROM FMusers";
 $resultLog = $conn->query($dBLogConnect);
 
-if(!$resultlog){
+if(!$resultLog){
   echo $conn->error;
 }
 ?>
