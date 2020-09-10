@@ -144,6 +144,7 @@ con.connect(function(err) {
                                     <h2>Current footfall in all buildings Demo</h2>
 
                                 </div>
+                                    "<script> resultLo </script>";
                                      <!-- table of clients fatLoss Progress -->
                                      <table class="table table-hover table-dark">
                                     <thead>
@@ -166,7 +167,9 @@ con.connect(function(err) {
                                                 $currentF =$row['CurrentFootfall']; 
                                                 $Times =$row['Time'];       
                                             //now echo to display vars with fetched data from dB
+                                            echo "<script> resultLo </script>";
                                               echo "
+                                              
                                               <tr>
                                               <td>$build</td> 
                                               <td>$room</td> 
@@ -190,8 +193,9 @@ con.connect(function(err) {
                             <div class="col-lg-10">
                                 <div class="section-title">
                                     <h2>Sensor Connect Test</h2>
+                                    echo "<script> resultLo </script>";
                                     <div class="alert alert-success" role="alert">
-                                        Current People : <script> resultLo </script> <p id ="myCount"> </p>
+                                        Current People : <p id ="myCount"> </p>
                                     </div>
                                     <!-- <h1 class="cover-heading">PI Button state</h1>
                                         <div class="onoffswitch" style="margin:0px auto;">
