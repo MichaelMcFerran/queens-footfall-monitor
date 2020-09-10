@@ -14,7 +14,7 @@ router.get('/monitor', function(req, res) {
 });
 
 /* GET connection to dB */
-router.get('/conn.php', function(req, res) { //should it be /conn.php
+router.get('/conn', function(req, res) { //should it be /conn.php
   res.render('conn', { title: 'Express' });
 });
 

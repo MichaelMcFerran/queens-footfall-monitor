@@ -9,15 +9,19 @@ var routes = require('./routes/index');
 
 var app = express();
 
-var mysql = require(‘mysql’);
-var connection = mysql.createConnection({
-    host     : 'eu-cdbr-west-03.cleardb.net',
-    user     : 'b357da7f3209b9',
-    password : 'f1318198',
-    database : 'heroku_58f73cf4b46766d'
-  });
+var mysql = require('mysql');
 
-  connection.connect();
+var con = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b357da7f3209b9",
+  password: "f1318198",
+  database : 'heroku_58f73cf4b46766d'
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
