@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript"> 
-// con.connect(function(err) {
-//     if (err) throw err;
-//     con.query("SELECT * FROM FMusers", function (err, result, fields) {
-//       if (err) throw err;
-//       var resultLo = result;
-//       console.log(resultLo);
-//     });
-//   });
+//connection to db test
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b357da7f3209b9",
+  password: "f1318198",
+  database : 'heroku_58f73cf4b46766d'
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    con.query("SELECT * FROM FMusers", function (err, result, fields) {
+      if (err) throw err;
+      var resultLo = result;
+      console.log(resultLo);
+    });
+  });
+
 </script>
 <!-- insert all preloaded PHP scripts here to autoload all data before rendering page contents, manipulated page content scritps go on bottom -->
 <?php
-//finds logged data entry that can populate table on down the page
-include('conn.php')
-$dBLogConnect = "SELECT * FROM FMusers";
-$resultLog = $conn->query($dBLogConnect);
+// //finds logged data entry that can populate table on down the page
+// include('conn.php')
+// $dBLogConnect = "SELECT * FROM FMusers";
+// $resultLog = $conn->query($dBLogConnect);
 
-if(!$resultLog){
-  echo $conn->error;
-}
-
+// if(!$resultLog){
+//   echo $conn->error;
+// }
 ?>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitor Footfall CSB </title>
@@ -180,7 +191,7 @@ if(!$resultLog){
                                 <div class="section-title">
                                     <h2>Sensor Connect Test</h2>
                                     <div class="alert alert-success" role="alert">
-                                        Current People : <p id ="myCount"> </p>
+                                        Current People : <script> resultLo </script> <p id ="myCount"> </p>
                                     </div>
                                     <!-- <h1 class="cover-heading">PI Button state</h1>
                                         <div class="onoffswitch" style="margin:0px auto;">
