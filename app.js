@@ -38,7 +38,7 @@ con.connect(function(err) {
 // app.set('view engine', 'jade');
 
 // setup php templating engine https://www.npmjs.com/package/php
-app.set('views', path.join(__dirname, 'templates'))
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'php')
 app.engine('php', php.__express)
 
