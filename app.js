@@ -9,13 +9,22 @@ var routes = require('./routes/index');
 
 var app = express();
 
+var mysql = require(‘mysql’);
+var connection = mysql.createConnection({
+    host     : 'eu-cdbr-west-03.cleardb.net',
+    user     : 'b357da7f3209b9',
+    password : 'f1318198',
+    database : 'heroku_58f73cf4b46766d'
+  });
+
+  connection.connect();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
-//fix to get favicon working
-app.use("/public", express.static('public')); 
+//fix to get favicon working https://stackoverflow.com/questions/15463199/how-to-set-custom-favicon-in-express
+app.use("/public", express.static('public'));  //public is web root
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
