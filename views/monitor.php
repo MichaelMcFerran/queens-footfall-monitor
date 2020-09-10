@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 
+<!-- insert all preloaded PHP scripts here to autoload all data before rendering page contents, manipulated page content scritps go on bottom -->
+<?php
+//finds logged data entry that can populate table on down the page
+include('conn.php')
+$dBLogConnect = "SELECT * FROM FMusers";
+$resultLog = $conn->query($dBLogConnect);
+
+if(!$resultlog){
+  echo $conn->error;
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,9 +96,10 @@
     <div class="cover-container">
       <div class="inner cover">
         <h1 class="cover-heading">CSB foyer</h1>
-        <div class="alert alert-success" role="alert">
+        <!-- <div class="alert alert-success" role="alert">
             Current People : <p id ="myCount"> </p>
-          </div>
+          </div> -->
+          <!-- below is for front end to pi manipulation -->
       <!-- <h1 class="cover-heading">PI Button state</h1>
           <div class="onoffswitch" style="margin:0px auto;">
             <div class="switch demo3">
@@ -95,11 +107,87 @@
               <label><i></i></label>
             </div>
           </div> -->
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>
 
+<div class="container-fluid">
+        <div class="row">
+                 <!-- Table of logging info start-->
+                 <div class="col-lg-6">
+                    <div class="footer-form set-bg" data-setbg="">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="section-title">
+                                    <h2>Current footfall in all buildings Demo</h2>
+
+                                </div>
+                                     <!-- table of clients fatLoss Progress -->
+                                     <table class="table table-hover table-dark">
+                                    <thead>
+                                        <tr >
+                                        <th width="15%">building ID</th>
+                                        <th width="15%">Room ID</th>
+                                        <th width="30%">Concurrent Footfall</th>
+                                        <th width="30%">Timestamp</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- gets progress from DB table, then displays -->
+                                        <?php
+                                           //must be name of result to check dB data on top, fetchs data
+                                            while($row=$resultLog->fetch_assoc()){
+                                                
+                                                //var names = row of data with explicit dB row name used
+                                                $build =$row['BuildingID'];
+                                                $room =$row['RoomID']; 
+                                                $currentF =$row['CurrentFootfall']; 
+                                                $Times =$row['Time'];       
+                                            //now echo to display vars with fetched data from dB
+                                              echo "
+                                              <tr>
+                                              <td>$build</td> 
+                                              <td>$room</td> 
+                                              <td>$currentF</td>
+                                              <td>$Times</td>
+                                              </tr>";
+                                            }
+                                        ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- end of logging info -->
+            <!-- form for weight plan start-->
+            <div class="col-lg-6">
+                    <div class="footer-form set-bg">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="section-title">
+                                    <h2>Sensor Connect Test</h2>
+                                    <div class="alert alert-success" role="alert">
+                                        Current People : <p id ="myCount"> </p>
+                                    </div>
+                                    <!-- <h1 class="cover-heading">PI Button state</h1>
+                                        <div class="onoffswitch" style="margin:0px auto;">
+                                            <div class="switch demo3">
+                                            <input type="checkbox" id="mybuttonGPIO">
+                                            <label><i></i></label>
+                                            </div>
+                                        </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <!-- form for weight plan end-->
+        <div>
+    </div>
     <!-- Hero/carousel Section Begin -->
     <!-- <section class="hero-section">
         <div class="hero-items owl-carousel">
