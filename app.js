@@ -12,6 +12,7 @@ var app = express();
 //hopefully should all conn.php to connect  https://www.npmjs.com/package/php
 var php = require('php');
 
+//connection to db test
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -21,10 +22,6 @@ var con = mysql.createConnection({
   database : 'heroku_58f73cf4b46766d'
 });
 
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
 con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM FMusers", function (err, result, fields) {
@@ -33,14 +30,15 @@ con.connect(function(err) {
       console.log(resultLo);
     });
   });
+
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
 
 // setup php templating engine https://www.npmjs.com/package/php
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'php')
-app.engine('php', php.__express)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'php');
+app.engine('php', php.__express);
 
 app.use(favicon());
 //fix to get favicon working https://stackoverflow.com/questions/15463199/how-to-set-custom-favicon-in-express
