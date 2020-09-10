@@ -4,13 +4,14 @@
 <!-- insert all preloaded PHP scripts here to autoload all data before rendering page contents, manipulated page content scritps go on bottom -->
 <?php
 //finds logged data entry that can populate table on down the page
-include('conn.php')
+include('/conn.php')
 $dBLogConnect = "SELECT * FROM FMusers";
 $resultLog = $conn->query($dBLogConnect);
 
 if(!$resultLog){
   echo $conn->error;
 }
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -91,11 +92,11 @@ if(!$resultLog){
     <!-- Nav Bar End -->
 
 
-<div class="site-wrapper">
+<!-- <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div class="cover-container">
       <div class="inner cover">
-        <h1 class="cover-heading">CSB foyer</h1>
+        <h1 class="cover-heading">CSB foyer</h1> -->
         <!-- <div class="alert alert-success" role="alert">
             Current People : <p id ="myCount"> </p>
           </div> -->
@@ -108,9 +109,9 @@ if(!$resultLog){
             </div>
           </div> -->
       <!-- </div> -->
-    </div>
+    <!-- </div>
   </div>
-</div>
+</div> -->
 
 <div class="container-fluid">
         <div class="row">

@@ -18,10 +18,18 @@ var con = mysql.createConnection({
   database : 'heroku_58f73cf4b46766d'
 });
 
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+// });
 con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+    if (err) throw err;
+    con.query("SELECT * FROM FMusers", function (err, result, fields) {
+      if (err) throw err;
+      var resultLo = result;
+      console.log(resultLo);
+    });
+  });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
