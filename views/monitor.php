@@ -2,7 +2,7 @@
 <html>
 <script type="text/javascript"> 
 //connection to db test
-var mysql = require('../node_modules/mysql'); //fix
+var mysql = require('../mysql'); //fix
 
 var con = mysql.createConnection({
   host: "eu-cdbr-west-03.cleardb.net",
