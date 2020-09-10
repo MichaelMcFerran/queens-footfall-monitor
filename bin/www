@@ -24,7 +24,10 @@ io.on("connection", function(socket){
      io.emit("updatecount", count); // submits change to listening html client
    });
 
-        //test upload to db and update 
+});
+
+
+        //test upload to db and update , used be inside socket.on and inside io.on
      //connection to db test
      var mysql = require('mysql'); //fix
 
@@ -47,4 +50,3 @@ io.on("connection", function(socket){
            console.log(resultLo);
          });
        });
-});
