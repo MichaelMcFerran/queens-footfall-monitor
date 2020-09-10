@@ -22,5 +22,29 @@ io.on("connection", function(socket){
      console.log("Person Count " + count); //see count in server console
 	
      io.emit("updatecount", count); // submits change to listening html client
+
+     //test upload to db and update 
+     //connection to db test
+      var mysql = require('../mysql'); //fix
+
+      var con = mysql.createConnection({
+        host: "eu-cdbr-west-03.cleardb.net",
+        user: "b357da7f3209b9",
+        password: "f1318198",
+        database : 'heroku_58f73cf4b46766d'
+      });
+      //one per room to take in data
+      //  this for example is csb first floor lab
+      con.connect(function(err) {
+          if (err) throw err;
+          console.log("connected");
+          //insert passed footfall from sensor
+          var counts = count;
+          con.query("INSERT INTO `FMusers` (BuildingID, RoomID, CurrentFootfall) VALUES ('1', '1', 'counts');", function (err, result, fields) {
+            if (err) throw err;
+            var resultLo = result;
+            console.log(resultLo);
+          });
+        });
    });
 });
