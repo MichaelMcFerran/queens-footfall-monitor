@@ -30,7 +30,8 @@ io.on("connection", function(socket){
         //test upload to db and update , used be inside socket.on and inside io.on
      //connection to db test
      //var mysql = require('mysql'); //fix
-     var mysql = require('../node_modules/mysql'); //fix ?
+    //  var mysql = require('../node_modules/mysql'); //fix ?
+    var mysql = require('../mysql'); //fix ?
 
      var con = mysql.createConnection({
        host: "eu-cdbr-west-03.cleardb.net",
