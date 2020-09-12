@@ -18,6 +18,11 @@ router.get('/conn.php', function(req, res) { //should it be /conn.php
   res.render('conn', { title: 'Express' });
 });
 
+/* GET test.html */
+router.get('/test', function(req, res) { //should it be /conn.php
+  res.render('test', { title: 'Express' });
+});
+
 
 
 module.exports = router;

@@ -29,24 +29,24 @@ var app = express();
 //var php = require('php');
 
 //connection to db test
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "eu-cdbr-west-03.cleardb.net",
-  user: "b357da7f3209b9",
-  password: "f1318198",
-  database : 'heroku_58f73cf4b46766d'
-});
+// var con = mysql.createConnection({
+//   host: "eu-cdbr-west-03.cleardb.net",
+//   user: "b357da7f3209b9",
+//   password: "f1318198",
+//   database : 'heroku_58f73cf4b46766d'
+// });
 
-con.connect(function(err) {
-    if (err) throw err;
-    var log = "SELECT * FROM FMusers"
-    con.query(log, function (err, result, fields) {
-      if (err) throw err;
-      var resultLo = result;
-      console.log(resultLo);
-    });
-  });
+// con.connect(function(err) {
+//     if (err) throw err;
+//     var log = "SELECT * FROM FMusers"
+//     con.query(log, function (err, result, fields) {
+//       if (err) throw err;
+//       var resultLo = result;
+//       console.log(resultLo);
+//     });
+//   });
 
 //unused atm
   // //check connection
