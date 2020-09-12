@@ -38,13 +38,6 @@ var con = mysql.createConnection({
   database : 'heroku_58f73cf4b46766d'
 });
 
-// //check connection
-// con.connect(function (err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
-
-//unused atm
 con.connect(function(err) {
     if (err) throw err;
     var log = "SELECT * FROM FMusers"
@@ -54,6 +47,13 @@ con.connect(function(err) {
       console.log(resultLo);
     });
   });
+
+//unused atm
+  // //check connection
+// con.connect(function (err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+// });
 
 //pointless, works with test.js
 // module.exports  = {
