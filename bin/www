@@ -50,14 +50,15 @@ io.on("connection", function(socket){
       //var countL1CSB = count;
       //var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1,  )" + connection.escape(count) ;
       //test to check uploads before passing param
-      var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1, 4 )"
-      con.query(log, function (err, result, fields) {
-        if (err) throw err;
-        //test to know if it uploads
-        // var resultLo = result;
-        // console.log(resultLo);
-        console.log("inserted footfall count to dB");
-      });
+      console.log("connected to dB");
+      // var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1, 4 )"
+      // con.query(log, function (err, result, fields) {
+      //   if (err) throw err;
+      //   //test to know if it uploads
+      //   // var resultLo = result;
+      //   // console.log(resultLo);
+      //   console.log("inserted footfall count to dB");
+      // });
     });
    });
 
