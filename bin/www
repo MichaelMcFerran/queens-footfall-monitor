@@ -44,20 +44,21 @@ io.on("connection", function(socket){
      //document.getElementById("myCount").innerHTML = count; //jQuery used to get and post count
      io.emit("updatecount", count); // submits change to listening html client
      //update dB
-    //  con.connect(function(err) {
-    //   if (err) throw err;  
-    //   //RoomId and buildingID values specific to each room and sensor as differentiate between each other in dB
-    //   //var countL1CSB = count;
-    //   var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1,  )" + connection.escape(count) ;
-      
-    //   con.query(log, function (err, result, fields) {
-    //     if (err) throw err;
-    //     //test to know if it uploads
-    //     // var resultLo = result;
-    //     // console.log(resultLo);
-    //     console.log("inserted footfall count to dB");
-    //   });
-    // });
+     con.connect(function(err) {
+      if (err) throw err;  
+      //RoomId and buildingID values specific to each room and sensor as differentiate between each other in dB
+      //var countL1CSB = count;
+      //var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1,  )" + connection.escape(count) ;
+      //test to check uploads before passing param
+      var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1, 4 )"
+      con.query(log, function (err, result, fields) {
+        if (err) throw err;
+        //test to know if it uploads
+        // var resultLo = result;
+        // console.log(resultLo);
+        console.log("inserted footfall count to dB");
+      });
+    });
    });
 
 });
