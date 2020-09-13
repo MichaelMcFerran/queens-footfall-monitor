@@ -8,6 +8,26 @@ var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
 
+    //connection to database hosted on cleardB with heroku
+    var mysql = require('mysql');
+
+    var con = mysql.createConnection({
+      host: "eu-cdbr-west-03.cleardb.net",
+      user: "b357da7f3209b9",
+      password: "f1318198",
+      database : 'heroku_58f73cf4b46766d'
+    });
+    //test to check if connection works
+    // con.connect(function(err) {
+    //     if (err) throw err;
+    //     var log = "SELECT * FROM FMusers"
+    //     con.query(log, function (err, result, fields) {
+    //       if (err) throw err;
+    //       var resultLo = result;
+    //       console.log(resultLo);
+    //     });
+    //   });
+
 var io = require("socket.io").listen(server);
 
 io.on("connection", function(socket){
@@ -17,11 +37,27 @@ io.on("connection", function(socket){
 //     console.log("State Changed: " + state);
 //     io.emit("updateState", state); // submits change to pi client
 //   });
-
+  
+   //this needs to be named for each room specific pi, and is modualr so can be scaled up for an amount of Pis
    socket.on("counter", function(count){
-     console.log("Person Count " + count); //see count in server console
-	
+     console.log("Person Count " + count); //see count in server console for testing
+     //document.getElementById("myCount").innerHTML = count; //jQuery used to get and post count
      io.emit("updatecount", count); // submits change to listening html client
+     //update dB
+    //  con.connect(function(err) {
+    //   if (err) throw err;  
+    //   //RoomId and buildingID values specific to each room and sensor as differentiate between each other in dB
+    //   //var countL1CSB = count;
+    //   var FootfallCSBLab1 = "INSERT INTO `FMusers` ( `RoomID`, `BuildingID`, `CurrentFootfall`) VALUES (1, 1,  )" + connection.escape(count) ;
+      
+    //   con.query(log, function (err, result, fields) {
+    //     if (err) throw err;
+    //     //test to know if it uploads
+    //     // var resultLo = result;
+    //     // console.log(resultLo);
+    //     console.log("inserted footfall count to dB");
+    //   });
+    // });
    });
 
 });
@@ -52,3 +88,4 @@ io.on("connection", function(socket){
     //        console.log(resultLo);
     //      });
     //    });
+
