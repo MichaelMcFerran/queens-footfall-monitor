@@ -2,7 +2,7 @@
 <html>
 <script type="text/javascript"> 
 // //connection to db test
-// var mysql = require('../node_modules/mysql'); //fix
+// var mysql = require('mysql'); //fix
 
 // var con = mysql.createConnection({
 //   host: "eu-cdbr-west-03.cleardb.net",
@@ -24,13 +24,13 @@
 <!-- insert all preloaded PHP scripts here to autoload all data before rendering page contents, manipulated page content scritps go on bottom -->
 <?php
 //finds logged data entry that can populate table on down the page
-// include('conn.php') //changed to /
-// $dBLogConnect = "SELECT * FROM FMusers";
-// $resultLog = $conn->query($dBLogConnect);
+include('conn.php'); //changed to /
+$dBLogConnect = "SELECT * FROM FMusers";
+$resultLog = $conn->query($dBLogConnect);
 
-// if(!$resultLog){
-//   echo $conn->error;
-// }
+if(!$resultLog){
+  echo $conn->error;
+}
 ?>
 <head>
 
@@ -145,6 +145,10 @@
 
                                 </div>
                                     "<script> resultLo </script>";
+                                       <!-- //added for testing -->
+                                       <form action="/" method="post">
+                                       <?php console.log("pass vars");?>
+                                      </form> 
                                      <!-- table of clients fatLoss Progress -->
                                      <table class="table table-hover table-dark">
                                     <thead>

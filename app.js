@@ -9,68 +9,6 @@ var routes = require('./routes/index');
 
 var app = express();
 
-// //doesnt work testing running php in node.js
-// var execPHP = require('./execphp.js')();
-// //maybe change to separate folder for just php files
-// execPHP.phpFolder = 'C:\\Users\\Michael Mc Ferran\\Documents\\MSc SoftwareDev\\MastersProject\\queens-footfall-monitor\\views\\';
-
-// app.use('*.php',function(request,response,next) {
-// 	execPHP.parseFile(request.originalUrl,function(phpResult) {
-// 		response.write(phpResult);
-// 		response.end();
-// 	});
-// });
-
-// app.listen(3000, function () {
-// 	console.log('Node server listening on port 3000!');
-// });
-
-// DOESNT WORK hopefully should all conn.php to connect  https://www.npmjs.com/package/php
-//var php = require('php');
-
-//connection to db test
-// var mysql = require('mysql');
-
-// var con = mysql.createConnection({
-//   host: "eu-cdbr-west-03.cleardb.net",
-//   user: "b357da7f3209b9",
-//   password: "f1318198",
-//   database : 'heroku_58f73cf4b46766d'
-// });
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     var log = "SELECT * FROM FMusers"
-//     con.query(log, function (err, result, fields) {
-//       if (err) throw err;
-//       var resultLo = result;
-//       console.log(resultLo);
-//     });
-//   });
-
-//unused atm
-  // //check connection
-// con.connect(function (err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
-
-//pointless, works with test.js
-// module.exports  = {
-//     select: function (callback) {
-//         var log = "SELECT * FROM FMusers";
-//         con.query(log, function (err, result, fields) {
-//         if (err) throw err;
-//         var resultLo = result;
-//         console.log(resultLo);
-//         });
-//     }
-// }
-
-
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -121,5 +59,122 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+//test to get data from db and pass to html page
+// https://stackoverflow.com/questions/50201943/extract-data-from-mysql-using-node-js-and-display-on-html-page
+
+// // connection to db test
+// var mysql = require('mysql');
+
+// var con = mysql.createConnection({
+//   host: "eu-cdbr-west-03.cleardb.net",
+//   user: "b357da7f3209b9",
+//   password: "f1318198",
+//   database : 'heroku_58f73cf4b46766d'
+// });
+// app.get('/',(req, res) => {
+//     con.connect(function(err) {
+//     if(err) throw err;
+//         else {
+//             con.query("SELECT * FROM FMusers",(err, result) => {
+//                 if(err) {
+//                     console.log(err); 
+//                     res.json({"error":true});
+//                 }
+//                 else { 
+//                     console.log(result); 
+//                     res.json(result); 
+//                 }
+//             });
+//         }
+//     });
+// });
 
 module.exports = app;
+
+
+
+
+// //doesnt work testing running php in node.js
+// var execPHP = require('./execphp.js')();
+// //maybe change to separate folder for just php files
+// execPHP.phpFolder = 'C:\\Users\\Michael Mc Ferran\\Documents\\MSc SoftwareDev\\MastersProject\\queens-footfall-monitor\\views\\';
+
+// app.use('*.php',function(request,response,next) {
+// 	execPHP.parseFile(request.originalUrl,function(phpResult) {
+// 		response.write(phpResult);
+// 		response.end();
+// 	});
+// });
+
+// app.listen(3000, function () {
+// 	console.log('Node server listening on port 3000!');
+// });
+
+// DOESNT WORK hopefully should all conn.php to connect  https://www.npmjs.com/package/php
+//var php = require('php');
+
+//connection to db test
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b357da7f3209b9",
+  password: "f1318198",
+  database : 'heroku_58f73cf4b46766d'
+});
+
+app.get('/',(req, res) => {
+  con.connect(function(err) {
+  if(err) throw err;
+      else {
+          con.query("SELECT * FROM FMusers",(err, result) => {
+              if(err) {
+                  console.log(err); 
+                  res.json({"error":true});
+              }
+              else { 
+                  console.log(result); 
+                  res.json(result); 
+                  res.sendFile(__dirname + "/monitor");
+                
+              }
+          });
+      }
+  });
+});
+// app.get('/',(req, res) => {
+// con.connect(function(err) {
+//     if (err) throw err;
+//     var log = "SELECT * FROM FMusers"
+//     con.query(log, function (err, result, fields) {
+//       if (err) throw err;
+//       console.log(result);
+     
+//       // res.json(result);
+//        res.sendFile(__dirname + "/test.html");
+//     });
+//   });
+// });
+
+//   app.get("/",(req, res) => {
+//     res.sendFile(__dirname + "/views/test.html");
+// });
+
+//unused atm
+  // //check connection
+// con.connect(function (err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+// });
+
+//pointless, works with test.js
+// module.exports  = {
+//     select: function (callback) {
+//         var log = "SELECT * FROM FMusers";
+//         con.query(log, function (err, result, fields) {
+//         if (err) throw err;
+//         var resultLo = result;
+//         console.log(resultLo);
+//         });
+//     }
+// }
