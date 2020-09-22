@@ -114,34 +114,34 @@ module.exports = app;
 //var php = require('php');
 
 //connection to db test
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "eu-cdbr-west-03.cleardb.net",
-  user: "b357da7f3209b9",
-  password: "f1318198",
-  database : 'heroku_58f73cf4b46766d'
-});
+// var con = mysql.createConnection({
+//   host: "eu-cdbr-west-03.cleardb.net",
+//   user: "b357da7f3209b9",
+//   password: "f1318198",
+//   database : 'heroku_58f73cf4b46766d'
+// });
 
-app.get('/',(req, res) => {
-  con.connect(function(err) {
-  if(err) throw err;
-      else {
-          con.query("SELECT * FROM FMusers",(err, result) => {
-              if(err) {
-                  console.log(err); 
-                  res.json({"error":true});
-              }
-              else { 
-                  console.log(result); 
-                  res.json(result); 
-                  res.sendFile(__dirname + "/monitor");
+// app.get('/',(req, res) => {
+//   con.connect(function(err) {
+//   if(err) throw err;
+//       else {
+//           con.query("SELECT * FROM FMusers",(err, result) => {
+//               if(err) {
+//                   console.log(err); 
+//                   res.json({"error":true});
+//               }
+//               else { 
+//                   console.log(result); 
+//                   res.json(result); 
+//                   res.sendFile(__dirname + "/monitor");
                 
-              }
-          });
-      }
-  });
-});
+//               }
+//           });
+//       }
+//   });
+// });
 // app.get('/',(req, res) => {
 // con.connect(function(err) {
 //     if (err) throw err;

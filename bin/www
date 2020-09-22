@@ -174,26 +174,26 @@ io.on("connection", function(socket){
    });
 
 });
-
-app.get('/',(req, res) => {
-  con.connect(function(err) {
-  if(err) throw err;
-      else {
-          con.query("SELECT * FROM FMusers",(err, result) => {
-              if(err) {
-                  console.log(err); 
-                  res.json({"error":true});
-              }
-              else { 
-                  console.log(result); 
-                  res.json(result); 
-                  res.sendFile(__dirname + "/monitor");
+//trying to pass vars to monitor page
+// app.get('/',(req, res) => {
+//   con.connect(function(err) {
+//   if(err) throw err;
+//       else {
+//           con.query("SELECT * FROM FMusers",(err, result) => {
+//               if(err) {
+//                   console.log(err); 
+//                   res.json({"error":true});
+//               }
+//               else { 
+//                   console.log(result); 
+//                   res.json(result); 
+//                   res.sendFile(__dirname + "/monitor");
                 
-              }
-          });
-      }
-  });
-});
+//               }
+//           });
+//       }
+//   });
+// });
 
 
 
