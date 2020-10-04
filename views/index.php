@@ -40,12 +40,32 @@
 </head>
 
   <body>
+  <script type="text/javascript"> 
+//connection to db test
+var mysql = require('mysql'); //fix
 
+var con = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b357da7f3209b9",
+  password: "f1318198",
+  database : 'heroku_58f73cf4b46766d'
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1';", function (err, result, fields) {
+      if (err) throw err;
+      var resultbuild = result;
+      console.log(resultLo);
+    });
+  });
+
+</script>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <h1 class="cover-heading">Person Count in CSB - Lab Ground Floor</h1>
+            <h1 class="cover-heading">Person Count in <p><?php $resultbuild ?> </p> - Lab Ground Floor</h1>
               <div class="alert alert-success" role="alert">
                 Current Number of People : <p id ="myCount"> </p>
               </div>
@@ -67,6 +87,8 @@
                 <!-- Current Number of People : <p id ="myCount4"> </p> -->
                 Current Number of People : 0 </p>
               </div>
+              <!-- Below is out of use code that gives an example of reverse functionality, web page controlling Pi Client when button pressed
+              see code at bottom -->
           <!-- <h1 class="cover-heading">PI Button state</h1>
               <div class="onoffswitch" style="margin:0px auto;">
                 <div class="switch demo3">
