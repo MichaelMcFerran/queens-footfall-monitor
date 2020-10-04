@@ -45,9 +45,27 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <h1 class="cover-heading">Person Count</h1>
-            <div class="alert alert-success" role="alert">
-                The number of people is : <p id ="myCount"> </p>
+            <h1 class="cover-heading">Person Count in CSB - Lab Ground Floor</h1>
+              <div class="alert alert-success" role="alert">
+                Current Number of People : <p id ="myCount"> </p>
+              </div>
+              <h1 class="cover-heading">Person Count in CSB - First Floor Lab</h1>
+              <div class="alert alert-success" role="alert">
+              <!-- Below is used when id is Javascript var for passed count, but no connected client, see line 101 -->
+                <!-- Current Number of People : <p id ="myCount2"> </p> -->
+                Current Number of People : 0 </p>
+              </div>
+              <h1 class="cover-heading">Person Count in Students Union - meeting Room 1</h1>
+              <div class="alert alert-success" role="alert">
+              <!-- Below is used when id is Javascript var for passed count, but no connected client, see line 101 -->
+                <!-- Current Number of People : <p id ="myCount3"> </p> -->
+                Current Number of People : 0 </p>
+              </div>
+              <h1 class="cover-heading">Person Count in Students Union - meeting Room 2</h1>
+              <div class="alert alert-success" role="alert">
+              <!-- Below is used when id is Javascript var for passed count, but no connected client, see line 101 -->
+                <!-- Current Number of People : <p id ="myCount4"> </p> -->
+                Current Number of People : 0 </p>
               </div>
           <!-- <h1 class="cover-heading">PI Button state</h1>
               <div class="onoffswitch" style="margin:0px auto;">
