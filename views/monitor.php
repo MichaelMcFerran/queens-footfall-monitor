@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript"> 
-// //connection to db test
+//connection to db test
 // var mysql = require('mysql'); //fix
 
 // var con = mysql.createConnection({
@@ -79,60 +79,6 @@ if(!$resultLog){
         <div class="loader"></div>
     </div> -->
 
-    <!-- Navigation Bar Start -->
-    <!-- <header class="header-section">
-        <div class="container">
-            <div class="logo">
-                <a href="/index.php">
-                    <img src="img/logo2.png" alt="">
-                </a>
-            </div>
-            <div class="nav-menu">
-                <nav class="mainmenu mobile-menu">
-                    <ul>
-                        <li class="active"><a href="./index.php">Home</a></li>
-                        <li><a href="./about.php">About</a></li>
-                        <li><a href="#">Workouts</a>
-                            <ul class="dropdown">
-                                <li><a href="./calisthenics.php">Calisthenics</a></li>
-                                <li><a href="./crossfit.php">Crossfit</a></li>
-                                <li><a href="./bodybuilding.php">BodyBuilding</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="trainer.php">Trainer</a></li>
-                        <li><a href="client.php">Client</a></li>
-                        <li><a href="./Admin/login.php">Login</a></li>
-                    </ul>
-                </nav>
-          
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header> -->
-    <!-- Nav Bar End -->
-
-
-<!-- <div class="site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="cover-container">
-      <div class="inner cover">
-        <h1 class="cover-heading">CSB foyer</h1> -->
-        <!-- <div class="alert alert-success" role="alert">
-            Current People : <p id ="myCount"> </p>
-          </div> -->
-          <!-- below is for front end to pi manipulation -->
-      <!-- <h1 class="cover-heading">PI Button state</h1>
-          <div class="onoffswitch" style="margin:0px auto;">
-            <div class="switch demo3">
-              <input type="checkbox" id="mybuttonGPIO">
-              <label><i></i></label>
-            </div>
-          </div> -->
-      <!-- </div> -->
-    <!-- </div>
-  </div>
-</div> -->
-
 <div class="container-fluid">
         <div class="row">
                  <!-- Table of logging info start-->
@@ -146,9 +92,8 @@ if(!$resultLog){
                                 </div>
                                     "<script> resultLo </script>";
                                        <!-- //added for testing -->
-                                       <form action="/" method="post">
-                                       <?php console.log("pass vars");?>
-                                      </form> 
+                                       <!-- <form action="/" method="post">
+                                      </form>  -->
                                      <!-- table of clients fatLoss Progress -->
                                      <table class="table table-hover table-dark">
                                     <thead>
