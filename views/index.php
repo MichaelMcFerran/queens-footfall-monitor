@@ -40,7 +40,7 @@
 </head>
 
   <body>
-  <script type="text/javascript"> 
+  <script src="app.js" type="text/javascript"> 
 //connection to db test
 var mysql = require('mysql'); //fix
 
