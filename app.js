@@ -55,48 +55,68 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-//test to get data from db and pass to html page
-// https://stackoverflow.com/questions/50201943/extract-data-from-mysql-using-node-js-and-display-on-html-page
-
-// connection to db test
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "eu-cdbr-west-03.cleardb.net",
-  user: "b357da7f3209b9",
-  password: "f1318198",
-  database : 'heroku_58f73cf4b46766d'
-});
-
-app.get('/',(req, res) => {
-  con.connect(function(err) {
-  if(err) throw err;
-      else {
-          con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1'",(err, result) => {
-              if(err) {
-                  console.log(err); 
-                  res.json({"error":true});
-              }
-              else { 
-                  console.log(result); 
-                  res.json(result); 
-                  res.sendFile(__dirname + "/index.html");
-                
-              }
-          });
-      }
-  });
-});
 
 module.exports = app;
 
+//test to get data from db and pass to html page
+// https://stackoverflow.com/questions/50201943/extract-data-from-mysql-using-node-js-and-display-on-html-page
+
+// connection to db test, works
+// var mysql = require('mysql');
+
+// var con = mysql.createConnection({
+//   host: "eu-cdbr-west-03.cleardb.net",
+//   user: "b357da7f3209b9",
+//   password: "f1318198",
+//   database : 'heroku_58f73cf4b46766d'
+// });
+
+//unused 
+// app.get('/',(req, res) => { res.sendFile(__dirname + "/index.html")});
+
+// app.post('/',(req, res)=>{
+//     con.connect(function(err) {
+//     if(err) throw err;
+//         else {
+//             con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1'",(err, result) => {
+//                 if(err) {
+//                     console.log(err); 
+//                     res.json({"error":true});
+//                 }
+//                 else { 
+//                     console.log(result); 
+//                     res.json(result); 
+//                 }
+//             });
+//         }
+//     });
+// });
+
+// app.get('/',(req, res) => {
+//   con.connect(function(err) {
+//   if(err) throw err;
+//       else {
+//           con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1'",(err, result) => {
+//               if(err) {
+//                   console.log(err); 
+//                   res.json({"error":true});
+//               }
+//               else { 
+//                   console.log(result); 
+//                   res.json(result); 
+//                   res.sendFile(__dirname + "/index.html");
+                
+//               }
+//           });
+//       }
+//   });
+// });
 
 
 
 
 
-
-//unused atm
+//unused 
   // //check connection
 // con.connect(function (err) {
 //     if (err) throw err;

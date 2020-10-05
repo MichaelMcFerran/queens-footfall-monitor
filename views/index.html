@@ -13,7 +13,7 @@
   <!-- Custom styles -->
   <link href="/stylesheets/style.css" rel="stylesheet">
 
- <!-- Queens logo fix -->
+ <!-- Queens logo icon on broswer tab-->
     <!-- ****** faviconit.com favicons ****** -->
   <link rel="shortcut icon" href="/public/img/faviconit/favicon.ico">
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/img/faviconit/favicon.ico">
@@ -45,13 +45,15 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
+            <!-- unused DOM manipulation tto gpass in dB values for building and room title -->
             <!-- <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1> -->
-            <h1 class="cover-heading">Person Count in <p id="test"> <form action="/" method="post" name="receiveBuilding">
+            <!-- <h1 class="cover-heading">Person Count in <p id="test"> <form action="/" method="post" name="receiveBuilding">
              <script> 
             //  console.log(result);
              var printz = result.toString();
             document.getElementById("test").innerHTML = printz;
-            </script>
+            </script> -->
+            <h1 class="cover-heading">Person Count in CSB - Lab Ground Floor</h1>
             </form></p> - Lab Ground Floor</h1>
               <div class="alert alert-success" role="alert">
                 Current Number of People : <p id ="myCount"> </p>
@@ -108,11 +110,8 @@
     
     socket.on("updatecount", function (count) {
     	console.log("The count is: " + count); //checks count is received
-	//js below changes checkbox on html page dynamically as state is send from PI-server-HTML
-    // var personCount = document.getElementById("myCount");
-    // personCount.firstChild.nodeValue = count;
+	  //js below changes checkbox on html page dynamically as state is send from PI-server-HTML
     document.getElementById("myCount").innerHTML = count;
-    
     });
 	
     </script>
