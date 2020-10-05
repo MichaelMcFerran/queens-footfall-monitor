@@ -58,84 +58,43 @@ app.use(function(err, req, res, next) {
 //test to get data from db and pass to html page
 // https://stackoverflow.com/questions/50201943/extract-data-from-mysql-using-node-js-and-display-on-html-page
 
-// // connection to db test
-// var mysql = require('mysql');
+// connection to db test
+var mysql = require('mysql');
 
-// var con = mysql.createConnection({
-//   host: "eu-cdbr-west-03.cleardb.net",
-//   user: "b357da7f3209b9",
-//   password: "f1318198",
-//   database : 'heroku_58f73cf4b46766d'
-// });
-// app.get('/',(req, res) => {
-//     con.connect(function(err) {
-//     if(err) throw err;
-//         else {
-//             con.query("SELECT * FROM FMusers",(err, result) => {
-//                 if(err) {
-//                     console.log(err); 
-//                     res.json({"error":true});
-//                 }
-//                 else { 
-//                     console.log(result); 
-//                     res.json(result); 
-//                 }
-//             });
-//         }
-//     });
-// });
+var con = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b357da7f3209b9",
+  password: "f1318198",
+  database : 'heroku_58f73cf4b46766d'
+});
+
+app.get('/',(req, res) => {
+  con.connect(function(err) {
+  if(err) throw err;
+      else {
+          con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1'",(err, result) => {
+              if(err) {
+                  console.log(err); 
+                  res.json({"error":true});
+              }
+              else { 
+                  console.log(result); 
+                  res.json(result); 
+                  res.sendFile(__dirname + "/index.html");
+                
+              }
+          });
+      }
+  });
+});
 
 module.exports = app;
 
 
 
 
-//connection to db test
-// var mysql = require('mysql');
 
-// var con = mysql.createConnection({
-//   host: "eu-cdbr-west-03.cleardb.net",
-//   user: "b357da7f3209b9",
-//   password: "f1318198",
-//   database : 'heroku_58f73cf4b46766d'
-// });
 
-// app.get('/',(req, res) => {
-//   con.connect(function(err) {
-//   if(err) throw err;
-//       else {
-//           con.query("SELECT * FROM FMusers",(err, result) => {
-//               if(err) {
-//                   console.log(err); 
-//                   res.json({"error":true});
-//               }
-//               else { 
-//                   console.log(result); 
-//                   res.json(result); 
-//                   res.sendFile(__dirname + "/monitor");
-                
-//               }
-//           });
-//       }
-//   });
-// });
-// app.get('/',(req, res) => {
-// con.connect(function(err) {
-//     if (err) throw err;
-//     var log = "SELECT * FROM FMusers"
-//     con.query(log, function (err, result, fields) {
-//       if (err) throw err;
-//       console.log(result);
-     
-//       // res.json(result);
-//        res.sendFile(__dirname + "/test.html");
-//     });
-//   });
-// });
-
-//   app.get("/",(req, res) => {
-//     res.sendFile(__dirname + "/views/test.html");
-// });
 
 //unused atm
   // //check connection
