@@ -61,15 +61,11 @@ con.connect(function(err) {
 
 </script>
 
-                                    <!-- "<script> resultLo </script>"; -->
-                                       <!-- //added for testing -->
-                                       <!-- <form action="/" method="post">
-                                      </form>  -->
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <h1 class="cover-heading">Person Count in <p><?php $resultbuild ?> </p> - Lab Ground Floor</h1>
+            <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1>
               <div class="alert alert-success" role="alert">
                 Current Number of People : <p id ="myCount"> </p>
               </div>
