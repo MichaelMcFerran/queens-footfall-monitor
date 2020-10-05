@@ -147,7 +147,7 @@ module.exports = app;
 //pointless, works with test.js
 // module.exports  = {
 //     select: function (callback) {
-//         var log = "SELECT * FROM FMusers";
+//         var log = "SELECT * FROM FMBuildings WHERE BuildingID = '1'";
 //         con.query(log, function (err, result, fields) {
 //         if (err) throw err;
 //         var resultLo = result;
@@ -155,3 +155,10 @@ module.exports = app;
 //         });
 //     }
 // }
+// con.connect(function(err) {
+//     if (err) throw err;
+//     con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1'", function (err, result, fields) {
+//       if (err) throw err;
+//       var resultbuild = result;
+//     });
+//   });
