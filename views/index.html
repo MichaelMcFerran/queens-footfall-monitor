@@ -40,33 +40,15 @@
 </head>
 
   <body>
-  <script type="text/javascript"> 
- 
-//connection to db test
-// var mysql = require('mysql'); //fix
-
-// var con = mysql.createConnection({
-//   host: "eu-cdbr-west-03.cleardb.net",
-//   user: "b357da7f3209b9",
-//   password: "f1318198",
-//   database : 'heroku_58f73cf4b46766d'
-// });
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1';", function (err, result, fields) {
-//       if (err) throw err;
-//       var resultbuild = result;
-//     });
-//   });
-
-</script>
 
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1>
+            <!-- <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1> -->
+            <h1 class="cover-heading">Person Count in <p><form action="/" method="post">
+              //YOUR FORM HERE 
+            </form></p> - Lab Ground Floor</h1>
               <div class="alert alert-success" role="alert">
                 Current Number of People : <p id ="myCount"> </p>
               </div>
