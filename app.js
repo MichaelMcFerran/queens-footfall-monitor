@@ -13,10 +13,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// setup php templating engine https://www.npmjs.com/package/php doesn't work
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'php');
-// app.engine('php', php.__express);
 
 app.use(favicon());
 //fix to get favicon working https://stackoverflow.com/questions/15463199/how-to-set-custom-favicon-in-express
@@ -93,25 +89,6 @@ module.exports = app;
 
 
 
-
-// //doesnt work testing running php in node.js
-// var execPHP = require('./execphp.js')();
-// //maybe change to separate folder for just php files
-// execPHP.phpFolder = 'C:\\Users\\Michael Mc Ferran\\Documents\\MSc SoftwareDev\\MastersProject\\queens-footfall-monitor\\views\\';
-
-// app.use('*.php',function(request,response,next) {
-// 	execPHP.parseFile(request.originalUrl,function(phpResult) {
-// 		response.write(phpResult);
-// 		response.end();
-// 	});
-// });
-
-// app.listen(3000, function () {
-// 	console.log('Node server listening on port 3000!');
-// });
-
-// DOESNT WORK hopefully should all conn.php to connect  https://www.npmjs.com/package/php
-//var php = require('php');
 
 //connection to db test
 // var mysql = require('mysql');

@@ -56,11 +56,15 @@ con.connect(function(err) {
     con.query("SELECT * FROM FMBuildings WHERE BuildingID = '1';", function (err, result, fields) {
       if (err) throw err;
       var resultbuild = result;
-      console.log(resultLo);
     });
   });
 
 </script>
+
+                                    <!-- "<script> resultLo </script>"; -->
+                                       <!-- //added for testing -->
+                                       <!-- <form action="/" method="post">
+                                      </form>  -->
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
