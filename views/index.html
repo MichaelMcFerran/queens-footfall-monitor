@@ -45,15 +45,6 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <!-- unused DOM manipulation tto gpass in dB values for building and room title -->
-            <!-- <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1> -->
-            <!-- <h1 class="cover-heading">Person Count in <p id="test"> <form action="/" method="post" name="receiveBuilding">
-             <script> 
-            //  console.log(result);
-             var printz = result.toString();
-            document.getElementById("test").innerHTML = printz;
-            </form></p> - Lab Ground Floor</h1>
-            </script> -->
             <h1 class="cover-heading">Person Count in CSB - Lab Ground Floor</h1>
               <div class="alert alert-success" role="alert">
                 Current Number of People : <p id ="myCount"> </p>
@@ -77,7 +68,7 @@
                 Current Number of People : 0 </p>
               </div>
               <!-- Below is out of use code that gives an example of reverse functionality, web page controlling Pi Client when button pressed
-              see code at bottom -->
+              see code at bottom of page and guide 3 -->
           <!-- <h1 class="cover-heading">PI Button state</h1>
               <div class="onoffswitch" style="margin:0px auto;">
                 <div class="switch demo3">
@@ -100,27 +91,31 @@
     <script src="socket.io/socket.io.js"></script>
 
     <script type="text/javascript">
-
-    //connect to GPIO of PI
+    //connect to server Socket.IO 
     var socket = io.connect('/');
-	//jquery takes changed state of toggle on page and passes state to server
-    // $("#myonoffswitch").change(function(){
-    //   socket.emit("stateChanged", this.checked);
-    // });
-    
+    //this is what code is reusable for additional clients with unique "titles" and function values
     socket.on("updatecount", function (count) {
     	console.log("The count is: " + count); //checks count is received
 	  //js below changes checkbox on html page dynamically as state is send from PI-server-HTML
     document.getElementById("myCount").innerHTML = count;
     });
-	
     </script>
 
   </body>
 </html>
 
+<!-- unused DOM manipulation to pass in dB values for building and room title -->
+            <!-- <h1 class="cover-heading">Person Count in <p><script>resultbuild</script></p> - Lab Ground Floor</h1> -->
+            <!-- <h1 class="cover-heading">Person Count in <p id="test"> <form action="/" method="post" name="receiveBuilding">
+             <script> 
+            //  console.log(result);
+             var printz = result.toString();
+            document.getElementById("test").innerHTML = printz;
+            </form></p> - Lab Ground Floor</h1>
+            </script> -->
+
  <!-- checking excess code doesnt cause issues -->
-    <!-- //connect to GPIO of PI
+    <!-- //connect to Server Socket.IO
     var socket = io.connect('/');
 	//jquery takes changed state of toggle on page and passes state to server
     // $("#myonoffswitch").change(function(){
